@@ -3,7 +3,10 @@
 # deploy your proyect, it willl create a completely new project
 service: notes-api
 
-# Create an optimized package for our functions
+# Use Webpack to create an optimized package for our functions. It will only
+# include the code needed to run the lambda functions and nothing else, thus
+# reducing the time of cold stats, otherwise when invoked a lambda function will
+# load all the code of the app.
 package:
   individually: true
 
